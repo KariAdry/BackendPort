@@ -53,7 +53,7 @@ public class Contexperiencia {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Experiencia> create(@RequestBody DtoExperiencia dtoExpe) {
+    public ResponseEntity<?> create(@RequestBody DtoExperiencia dtoExpe) {
         if (StringUtils.isBlank(dtoExpe.getNombreExp())) {
             return new ResponseEntity(new Mensaje("El campo debe ser completado"), HttpStatus.BAD_REQUEST);
         }
