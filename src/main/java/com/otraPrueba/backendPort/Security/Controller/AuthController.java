@@ -49,11 +49,11 @@ public class AuthController {
     {
        if(bindingResult.hasErrors())
        {
-            return new ResponseEntity<>(new Mensaje("Campos mal puestos o email invalido"),HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Campos mal puestos o email invalido"),HttpStatus.BAD_REQUEST);
        }
         if(usuarioService.existsByNombreUsuario(nuevoUsuario.getNombreUsuario()))
         {
-            return new ResponseEntity<>(new Mensaje("Ese nombre de usuario ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("Ese nombre de usuario ya existe"), HttpStatus.BAD_REQUEST);
         }
         if(usuarioService.existsByEmail(nuevoUsuario.getEmail()))
         {    
@@ -69,7 +69,7 @@ public class AuthController {
         usuario.setRoles(roles);
         usuarioService.save(usuario);
 
-        return new ResponseEntity<>(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
+        return new ResponseEntity(new Mensaje("Usuario guardado"),HttpStatus.CREATED);
     }
     
     @PostMapping("/login")
@@ -88,7 +88,7 @@ public class AuthController {
 
         JwtDto jwtDto = new JwtDto(jwt, userDetails.getUsername(), userDetails.getAuthorities());
 
-        return new ResponseEntity<>(jwtDto, HttpStatus.OK);
+        return new ResponseEntity(jwtDto, HttpStatus.OK);
     }
     
     }
