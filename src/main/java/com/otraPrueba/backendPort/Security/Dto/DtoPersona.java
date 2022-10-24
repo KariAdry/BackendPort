@@ -2,8 +2,6 @@ package com.otraPrueba.backendPort.Security.Dto;
 
 import javax.validation.constraints.NotBlank;
 
-
-
 public class DtoPersona {
    @NotBlank
    private String nombre;

@@ -22,7 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/cono")
-@CrossOrigin (origins= "https://frontendportfolio-b206c.web.app")
+@CrossOrigin (origins= {"https://frontendportfolio-b206c.web.app","http://localhost:4200"})
+
 public class ContConocimientos
 {
    @Autowired 

@@ -21,7 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/explab")
-@CrossOrigin(origins = "https://frontendportfolio-b206c.web.app")
+@CrossOrigin(origins = {"https://frontendportfolio-b206c.web.app","http://localhost:4200"})
+
 public class Contexperiencia {
 
     @Autowired
@@ -84,4 +85,6 @@ public class Contexperiencia {
         servExperiencia.save(experiencia);
         return new ResponseEntity(new Mensaje("La actualizacion ha sido guardada"), HttpStatus.OK);
     }
+    
+    
 }
