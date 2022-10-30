@@ -25,17 +25,31 @@ public class Persona {
     private String descripcion;
 
     
-    private String img;
+    private String imagenURL;
+    
+    private String imagenPath;
+
+    
 
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String descripcion, String img) {
+    public Persona(String nombre, String apellido, String descripcion, String imagenURL,String imagenPath) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
-        this.img = img;
+        this.imagenURL = imagenURL;
+        this.imagenPath = imagenPath;
     }
+
+    public String getimagenPath() {
+        return imagenPath;
+    }
+
+    public void setimagenPath(String imagenPath) {
+        this.imagenPath = imagenPath;
+    }  
+
 
     public int getId() {
         return id;
@@ -69,17 +83,13 @@ public class Persona {
         this.descripcion = descripcion;
     }
 
-    public String getImg() {
-        return img;
+    public String getimagenURL() {
+        return imagenURL;
     }
 
-    public void setImg(String img) {
-        this.img = img;
-    }
-    
-    
-    
-    
+    public void setimagenURL(String imagenURL) {
+        this.imagenURL = imagenURL;
+    }   
     
    }
     

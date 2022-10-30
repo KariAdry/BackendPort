@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping ("/persona")
-@CrossOrigin(origins = {"https://frontendportfolio-b206c.web.app", "http://localhost:4200"})
-
+/*@CrossOrigin(origins = "https://frontendportfolio-b206c.web.app")*/
+@CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController
 {
     @Autowired
     PersonaService personaService;
     
-    @GetMapping("/list")
+    @GetMapping("/lista")
     public ResponseEntity<List<Persona>>list()
   {
   List<Persona>list = personaService.list();
@@ -68,7 +68,7 @@ public class PersonaController
     {
     return new ResponseEntity(new Mensaje("El nombre de esa persona ya existe"),HttpStatus.BAD_REQUEST);
     }
-     Persona persona = new Persona(dtoPers.getNombre(),dtoPers.getApellido(),dtoPers.getDescripcion(),dtoPers.getImg());
+     Persona persona = new Persona(dtoPers.getNombre(),dtoPers.getApellido(),dtoPers.getDescripcion(),dtoPers.getimagenURL(), dtoPers.getimagenPath());
      personaService.save(persona);
      return new ResponseEntity(new Mensaje("La persona se creo correctamente"),HttpStatus.OK);
     }
@@ -92,7 +92,8 @@ public class PersonaController
       persona.setNombre(dtoPers.getNombre());
       persona.setApellido(dtoPers.getApellido());
       persona.setDescripcion(dtoPers.getDescripcion());
-      persona.setImg(dtoPers.getImg());
+      persona.setimagenURL(dtoPers.getimagenURL());
+      persona.setimagenPath(dtoPers.getimagenPath());
       
      personaService.save(persona);
      return new ResponseEntity(new Mensaje("La persona se actualizo correctamente"),HttpStatus.OK);

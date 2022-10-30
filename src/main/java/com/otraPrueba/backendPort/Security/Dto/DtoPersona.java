@@ -8,18 +8,21 @@ public class DtoPersona {
    @NotBlank
    private String apellido;
    @NotBlank
-   private String img;
+   private String imagenURL;
    @NotBlank
    private String descripcion;
+   @NotBlank
+   private String imagenPath;
 
     public DtoPersona() {
     }
 
-    public DtoPersona(String nombre, String apellido, String img, String descripcion) {
+    public DtoPersona(String nombre, String apellido, String imagenURL, String descripcion,String imagenPath) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.img = img;
+        this.imagenURL = imagenURL;
         this.descripcion = descripcion;
+        this.imagenPath = imagenPath;
     }
 
     public String getNombre() {
@@ -38,12 +41,12 @@ public class DtoPersona {
         this.apellido = apellido;
     }
 
-    public String getImg() {
-        return img;
+    public String getimagenURL() {
+        return imagenURL;
     }
 
-    public void setImg(String img) {
-        this.img = img;
+    public void setimagenURL(String imagenURL) {
+        this.imagenURL = imagenURL;
     }
 
     public String getDescripcion() {
@@ -53,6 +56,16 @@ public class DtoPersona {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public String getimagenPath() {
+        return imagenPath;
+    }
+
+    public void setimagenPath(String imagenPath) {
+        this.imagenPath = imagenPath;
+    }
+
+
    
    
 }

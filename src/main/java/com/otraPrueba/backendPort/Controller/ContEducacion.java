@@ -23,8 +23,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/educacion")
-@CrossOrigin (origins = {"https://frontendportfolio-b206c.web.app","http://localhost:4200"})
-
+/*@CrossOrigin (origins = "https://frontendportfolio-b206c.web.app")*/
+@CrossOrigin(origins = "http://localhost:4200")
 public class ContEducacion 
 {
  @Autowired
@@ -70,7 +70,7 @@ public class ContEducacion
  {
    return new ResponseEntity(new Mensaje("La instruccion ya existe"),HttpStatus.BAD_REQUEST);
  }    
- Educacion educacion = new Educacion (dtoEdu.getNombreEdu(), dtoEdu.getDescripcionEdu());
+ Educacion educacion = new Educacion (dtoEdu.getNombreEdu(), dtoEdu.getDescripcionEdu(), dtoEdu.getImagenPath(), dtoEdu.getImagenURL());
   servEducacion.save(educacion);
   
   return new ResponseEntity(new Mensaje("La instruccion ha sido guardada"),HttpStatus.OK);
@@ -96,7 +96,9 @@ public ResponseEntity<?>update(@PathVariable("id") int id, @RequestBody DtoEduca
    Educacion educacion = servEducacion.getOne(id).get();
    educacion.setNombreEdu(dtoEdu.getNombreEdu());
    educacion.setDescripcionEdu(dtoEdu.getDescripcionEdu());
-   
+   educacion.setDescripcionEdu(dtoEdu.getImagenPath());
+   educacion.setDescripcionEdu(dtoEdu.getImagenURL());
+      
    servEducacion.save(educacion);
    return new ResponseEntity(new Mensaje("La actualizacion de educacion esta terminada"),HttpStatus.OK);
 }  

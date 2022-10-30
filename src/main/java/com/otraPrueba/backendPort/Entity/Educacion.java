@@ -14,14 +14,34 @@ public class Educacion {
     private int id;
     private String nombreEdu;
     private String descripcionEdu;
+    private String imagenPath;
+    private String imagenURL;
 
     public Educacion() {
     }
 
-    public Educacion(String nombreEdu, String descripcionEdu) {
+    public Educacion(String nombreEdu, String descripcionEdu, String imagenPath, String imagenURL) {
         
         this.nombreEdu = nombreEdu;
         this.descripcionEdu = descripcionEdu;
+        this.imagenPath = imagenPath;
+        this.imagenURL = imagenURL;
+    }
+
+    public String getImagenPath() {
+        return imagenPath;
+    }
+
+    public void setImagenPath(String imagenPath) {
+        this.imagenPath = imagenPath;
+    }
+
+    public String getImagenURL() {
+        return imagenURL;
+    }
+
+    public void setImagenURL(String imagenURL) {
+        this.imagenURL = imagenURL;
     }
 
     public int getId() {
