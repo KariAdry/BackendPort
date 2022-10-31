@@ -35,7 +35,8 @@ public class PersonaController
   {
   List<Persona>list = personaService.list();
   return new ResponseEntity(list,HttpStatus.OK);
-  }
+  } 
+    
     
     @GetMapping("/details/{id}")
     public ResponseEntity<Persona>getById(@PathVariable("id")int id)
@@ -76,7 +77,7 @@ public class PersonaController
     }
     
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> update(@PathVariable("id")int id, @RequestBody DtoPersona dtoPers)
+    public ResponseEntity<?>update(@PathVariable("id")int id, @RequestBody DtoPersona dtoPers)
     {
       if(!personaService.existsById(id))
       {

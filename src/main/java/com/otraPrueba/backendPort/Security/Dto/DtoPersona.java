@@ -17,7 +17,8 @@ public class DtoPersona {
     public DtoPersona() {
     }
 
-    public DtoPersona(String nombre, String apellido, String imagenURL, String descripcion,String imagenPath) {
+    public DtoPersona(String nombre, String apellido, String imagenURL, String descripcion,String imagenPath)
+    {
         this.nombre = nombre;
         this.apellido = apellido;
         this.imagenURL = imagenURL;
@@ -66,15 +67,4 @@ public class DtoPersona {
         this.descripcion = descripcion;
     }
 
-    public String getimagenPath() {
-        return imagenPath;
-    }
-
-    public void setimagenPath(String imagenPath) {
-        this.imagenPath = imagenPath;
-    }
-
-
-   
-   
 }
