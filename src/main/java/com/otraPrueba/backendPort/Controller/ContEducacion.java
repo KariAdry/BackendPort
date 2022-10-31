@@ -96,8 +96,8 @@ public ResponseEntity<?>update(@PathVariable("id") int id, @RequestBody DtoEduca
    Educacion educacion = servEducacion.getOne(id).get();
    educacion.setNombreEdu(dtoEdu.getNombreEdu());
    educacion.setDescripcionEdu(dtoEdu.getDescripcionEdu());
-   educacion.setDescripcionEdu(dtoEdu.getImagenPath());
-   educacion.setDescripcionEdu(dtoEdu.getImagenURL());
+   educacion.setImagenPath(dtoEdu.getImagenPath());
+   educacion.setImagenURL(dtoEdu.getImagenURL());
       
    servEducacion.save(educacion);
    return new ResponseEntity(new Mensaje("La actualizacion de educacion esta terminada"),HttpStatus.OK);

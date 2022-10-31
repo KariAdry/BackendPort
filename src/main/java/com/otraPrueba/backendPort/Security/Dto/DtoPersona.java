@@ -41,14 +41,23 @@ public class DtoPersona {
         this.apellido = apellido;
     }
 
-    public String getimagenURL() {
+    public String getImagenURL() {
         return imagenURL;
     }
 
-    public void setimagenURL(String imagenURL) {
+    public void setImagenURL(String imagenURL) {
         this.imagenURL = imagenURL;
     }
 
+    public String getImagenPath() {
+        return imagenPath;
+    }
+
+    public void setImagenPath(String imagenPath) {
+        this.imagenPath = imagenPath;
+    }
+
+   
     public String getDescripcion() {
         return descripcion;
     }
