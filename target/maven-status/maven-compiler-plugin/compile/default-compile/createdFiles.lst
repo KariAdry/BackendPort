@@ -18,6 +18,7 @@ com\otraPrueba\backendPort\Security\Jwt\JwtTokenFilter.class
 com\otraPrueba\backendPort\Security\Service\ServEducacion.class
 com\otraPrueba\backendPort\BackendPortApplication.class
 com\otraPrueba\backendPort\Security\Service\UsuarioService.class
+com\otraPrueba\backendPort\WebConfiguration.class
 com\otraPrueba\backendPort\Security\Controller\Mensaje.class
 com\otraPrueba\backendPort\Entity\Educacion.class
 com\otraPrueba\backendPort\JDTO\DtoExperiencia.class
